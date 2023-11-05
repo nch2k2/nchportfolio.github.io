@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.content{
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.leftcontent{
+    color: white;
+    width: 30%;
+    font-size: 40px;
+    padding: 80px 50px;
+}
+.rightcontent{
+    width: 30%;
+}
+.rightcontent img{
+    width: 80%;
+}
+.highlight{
+    color:rgb(230, 196, 242);
+    font-weight: bold;
+}
+.box{
+    height: 50px;
+    width: 400px;
+    background-color: rgb(205, 107, 238);
+    position: relative;
+    top: -50px;
+    animation: ani 2s steps(12)infinite;
+}
+.btn{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 120px;
+    height: 40px;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+.btn img{
+    width: 15px;
+}
+.btn:active{
+    height: 39px;
+    width: 119px;
+}
+header hr{
+    border: none;
+    background-color: white;
+    width: 77%;
+    height: 3px;
+    margin: 20px auto;
+}
+.another-content{
+    width: 75%;
+    height: 400px;
+    margin: 20px auto;
+    padding: 0 50px;
+}
+.another-content > p{
+    font-size: 15px;
+    color: white;
+}
+.another-content > h1{
+    font-size: 25px;
+    color: white;
+}
+.bar{
+    width: 80%;
+    height: 4px;
+    background-color: white;
+    margin-top: 40px;
+}
+.v-bar{
+    width: 2px;
+    height: 100px;
+    background-color: white;
+}
+.experience{
+    display: flex;
+    justify-content: space-around;
+}
+.v-text{
+    color: white;
+    width: 100px;
+    font-size: 1.1rem;
+    position: relative;
+    top: 100px;
+}
+
+@keyframes ani {
+    40%, 60%{
+        left: 100%;
+        width: 0%;
+    }
+    0%, 100%{
+        left: 0%;
+        width: 100%;
+    }
+}

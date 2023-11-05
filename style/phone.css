@@ -1,0 +1,30 @@
+.rightcontent{
+    display: none;
+}
+.leftcontent{
+    width: 100%;
+}
+.navbar{
+    width: 95%;
+}
+.bar{
+    height: 300px;
+    width: 3px;
+}
+.experience{
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 200px;
+}
+.v-bar{
+    height: 2px;
+    width: 100px;
+}
+.another-content > div{
+    display: flex;
+}
+.v-text{
+    top: 0;
+    left: 100px;
+    width: 220px;
+}
