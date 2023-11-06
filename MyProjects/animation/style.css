@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.sky img{
+    width: 100%;
+    background-size: cover;
+}
+.city3{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: moveleft 20s linear infinite
+}
+.city3 img{
+    width: 200%;
+}
+.city2{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: moveleft 14s linear infinite;
+}
+.city2 img{
+    width: 200%;
+}
+.city1{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    animation: moveleft 8s linear infinite;
+}
+.city1 img{
+    width: 200%;
+}
+.road{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation: roadmotion 0.3s linear infinite;
+}
+.car{
+    width: 300px;
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+}
+.car img{
+    width: 100%;
+}
+.rearwheel{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    bottom: 62px;
+    left: 126px;
+    animation: rotatewheel 0.4s linear infinite;
+}
+.rearwheel img{
+    width: 100%;
+}
+.frontwheel img{
+    width: 100%;
+}
+.frontwheel{
+    left: 305px;
+    bottom: 60px;
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    animation: rotatewheel 0.4s linear infinite;
+}
+@keyframes rotatewheel {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes roadmotion {
+    100%{
+        transform: translateX(-100px);
+    }
+}
+@keyframes moveleft {
+    100%{
+        transform: translateX(-100%);
+    }
+}

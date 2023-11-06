@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="img/taskbar/window.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="window">
+        <img class="edge_app" src="img/edge_app.png" width="100%" alt="">
+        <img class="file_exp" src="img/file_explorer.png" width="100%" alt="">
+        <img class="calculator" src="img/calculator_app.png" width="100%" alt="">
+        <img class="notepad" src="img/notepad_app.png" width="100%" alt="">
+        <img class="chrome" src="img/chrome_app.png" width="100%" alt="">
+        <img class="cmd" src="img/cmd.png" width="100%" alt="">
+        <div class="red-x">&#10005</div>
+    </div>
+    <div class="startmenu">
+        <div class="searchbar"><input type="text" placeholder="Search for apps"></div>
+        <div class="pinned"><h3>Pinned</h3>
+            <div class="pinnedicon">
+                <img src="img/startmenu/file_start.png" alt="" id="file_start">
+                <img src="img/startmenu/edge_start.png" alt="" id="edge_start">
+                <img src="img/startmenu/calculator_start.png" alt="" id="calculator_start">
+                <img src="img/startmenu/notepad_start.png" alt="" id="notepad_start">
+            </div>
+        </div>
+        <div class="recommended">
+            <h3>Recommended</h3>
+            <div class="reco-icon"><img src="img/startmenu/cmd_icon.png" height="70px" alt="" id="cmd"></div>
+        </div>
+        <div class="log">
+            <div class="user"><img src="img/startmenu/user.png" alt="">Nimai</div>
+            <div class="shut"><img src="img/startmenu/shut.png" alt=""></div>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div></div>
+        <div class="icons">
+            <div class="icon"><img src="img/taskbar/window.png" alt=""></div>
+            <input class="search" type="text" placeholder="Search">
+            <div class="icon"><img src="img/taskbar/edge.png" alt=""></div>
+            <div class="icon"><img src="img/taskbar/fileexp.png" alt=""></div>
+            <div class="icon"><img src="img/taskbar/chrome.png" alt=""></div>
+        </div>
+        <div class="rightbar">
+            <div class="hidden-icons hov">^</div>
+            <div class="keyboard hov">ENG<br>IN</div>
+            <div class="datetime hov">
+                <div class="time"></div>
+                <div class="date"></div>
+            </div>
+            <div class="show-desktop hov"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

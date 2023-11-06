@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: cyan;
+        }
+        .txt{
+            font-size: 50px;
+            text-align: center;
+            height: 100px;
+            text-shadow: 0 0 5px cyan;
+            
+        }
+        .btn{
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid cyan;
+            color: cyan;
+            font-size: 30px;
+            box-shadow: 0px 0px 5px cyan;
+            text-shadow: 0 0 5px cyan;
+        }
+        .btn:hover{
+            background-color: cyan;
+            color: black;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+            gap: 10px;
+        }
+        .inp{
+            height: 50px;
+            width: 230px;
+            font-size: 40px;
+            background-color: transparent;
+            border: 2px solid cyan;
+            color: cyan;
+            box-shadow: 0 0 5px cyan;
+            text-shadow: 0 0 5px cyan;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="txt">Calculator</div>
+        <div class="row">
+            <input class="inp" type="text" readonly>
+        </div>
+        <div class="row">
+            <button class="btn">C</button>
+            <button class="btn">&larr;</button>
+            <button class="btn">%</button>
+            <button class="btn">/</button>
+        </div>
+        <div class="row">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">*</button>
+        </div>
+        <div class="row">
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">+</button>
+        </div>
+        <div class="row">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">-</button>
+        </div>
+        <div class="row">
+            <button class="btn">00</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button class="btn">=</button>
+        </div>
+    </div>
+    <script>
+        let str="";
+        let btns = document.querySelectorAll('.btn');
+        Array.from(btns).forEach((btn) => {
+            btn.addEventListener('click', (e) =>{
+                if(e.target.innerHTML == 'C'){
+                    str = "";
+                    document.querySelector('input').value = str;
+                }
+                else if(e.target.innerHTML == '='){
+                    str = eval(str);
+                    str = str.toString();
+                    document.querySelector('input').value = str;
+                }
+                else if(e.target.innerHTML == '\u2190'){
+                    str = str.slice(0, str.length-1);
+                    document.querySelector('input').value = str;
+                }
+                else if(e.target.innerHTML == '%'){
+                    str = str/100;
+                    document.querySelector('input').value = str
+
+                }
+                else if((e.target.innerHTML == '+' || e.target.innerHTML == '-' || e.target.innerHTML == '*' || e.target.innerHTML == '/' || e.target.innerHTML == '%' || e.target.innerHTML == '.') && (str[str.length-1] == '+' || str[str.length-1] == '-' || str[str.length-1] == '*' || str[str.length-1] == '/' || str[str.length-1] == '%' || str[str.length-1] =='.')){
+                    str = str.slice(0, str.length-1);
+                    str += e.target.innerHTML;
+                    document.querySelector('input').value = str;
+                }
+                else if((e.target.innerHTML == '+' || e.target.innerHTML == '-' || e.target.innerHTML == '/' || e.target.innerHTML == '*' || e.target.innerHTML == '%' || e.target.innerHTML == '.') && str.length==0){
+                }
+                else{
+                    str += e.target.innerHTML;
+                    document.querySelector('input').value = str;
+                }
+            })
+        });
+    </script>
+</body>
+</html>

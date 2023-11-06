@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.heading{
+    color: red;
+    text-shadow: 0 0 5px red, 0 0 10px red;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+    font-size: 30px;
+    border-bottom: 2px solid red;
+    box-shadow: 0 0 4px red, 0 0 20px red;
+    animation: ani 6s infinite;
+}
+.win{
+    height: 80vh;
+    width: 100wh;
+    position: absolute;
+}
+.container{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: purple;
+    text-shadow: 0 0 5px purple, 0 0 20px purple, 0 0 50px purple;
+    font-size: 100px;
+    cursor: default;
+}
+.line{
+    background-color: cyan;
+    border-radius: 2px;
+    box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan, 0 0 100px cyan;
+}
+.content{
+    display: grid;
+    grid-template-columns: 150px 4px 150px 4px 150px;
+    grid-template-rows: 150px 4px 150px 4px 150px;
+    margin: 0 50px;
+}
+.game-info{
+    margin-top: 50px;
+}
+.game-info h1{
+    color: skyblue;
+    text-shadow: 0 0 5px skyblue, 0 0 10px skyblue;
+}
+.reset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.reset button{
+    background-color: black;
+    color: cyan;
+    text-shadow: 0 0 5px cyan;
+    border: 2px solid cyan;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    box-shadow: 0 0 5px cyan, inset 0 0 5px cyan;
+}
+.reset button:hover{
+    background-color: cyan;
+    color: black;
+    box-shadow: 0 0 10px cyan, 0 0 25px cyan;
+}
+@keyframes ani {
+    0%{
+        color: red;
+        border-bottom: 2px solid red;
+        box-shadow: 0 0 10px red, 0 0 20px red;
+        text-shadow: 0 0 10px red, 0 0 15px red;
+    }
+    33%{
+        color: purple;
+        border-bottom: 2px solid purple;
+        box-shadow: 0 0 10px purple, 0 0 20px purple;
+        text-shadow: 0 0 10px purple, 0 0 15px purple;
+    }
+    66%{
+        color: lime;
+        border-bottom: 2px solid lime;
+        box-shadow: 0 0 10px lime, 0 0 20px lime;
+        text-shadow: 0 0 10px lime, 0 0 15px lime;
+    }
+}
+.win{
+    width: 100%;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+.drawLine{
+    width: 2px;
+    height: 500px;
+    top: 235px;
+    background-color: blue;
+    box-shadow: 0 0 5px blue, 0 0 20px blue;
+    position: absolute;
+    display: none;
+}
+.showdraw{
+    position: absolute;
+    width: 0px;
+    height: 200px;
+    bottom: 200px;
+    border: 4px solid blue;
+    box-shadow: 0 0 5px blue, 0 0 20px blue, 0 0 40px blue, inset 0 0 10px blue, inset 0 0 30px blue;
+    text-shadow: 0 0 5px blue, 0 0 20px blue, 0 0 40px blue;
+    color: blue;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    display: none;
+}

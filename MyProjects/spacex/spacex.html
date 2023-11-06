@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteor Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="start">
+        <div class="heading"><h1>Meteor Shooter</h1></div>
+        <button class="btn">START</button>
+        <div class="ship">
+            <div class="left">&lt;</div>
+            <img id="ship" src="img/rocket1.png" alt="">
+            <div class="right">&gt;</div>
+        </div>
+    </div>
+    <div class="gameover">
+        <div class="heading">
+            <h1>Game Over</h1>
+        </div>
+        <div class="displayscore"></div>
+        <button class="restart">Restart</button>
+    </div>
+    <canvas id="board"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
