@@ -4,9 +4,9 @@ let ham = document.querySelector(".hamburger");
         let active = false;
         ham.addEventListener('click', ()=>{
             if(active == false){
-                cross[0].style.transform = "translateY(15px) rotate(45deg)";
+                cross[0].style.transform = "translateY(14px) rotate(45deg)";
                 cross[1].style.opacity = "0";
-                cross[2].style.transform = "translateY(-15px) rotate(-45deg)";
+                cross[2].style.transform = "translateY(-14px) rotate(-45deg)";
                 active = true;
             }
             else{
