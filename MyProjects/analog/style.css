@@ -27,6 +27,11 @@ body{
     position: absolute;
     top: 34vw;
     left: 48vw;
+    width: 5vw;
+    height: 10vw;
+}
+.pendulum img{
+    width: 5vw;
 }
 .hour{
     height: 21%;
