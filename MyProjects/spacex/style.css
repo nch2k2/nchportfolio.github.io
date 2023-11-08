@@ -47,6 +47,10 @@ canvas{
 h1{
     font-size: 80px;
 }
+.text{
+    font-family: 'Pixelify Sans', sans-serif;
+    text-align: center;
+}
 .ship{
     width: 600px;
     height: 200px;
