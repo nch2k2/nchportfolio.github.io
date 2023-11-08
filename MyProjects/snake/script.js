@@ -17,6 +17,7 @@ let scoreboard;
 let score = 0;
 let reset;
 let gameovertitle;
+let gamestart;
 let upbtn;
 let downbtn;
 let leftbtn;
@@ -27,6 +28,7 @@ window.onload = function (){
     scoreboard = document.querySelector(".score");
     reset = document.getElementById("reset");
     gameovertitle = document.querySelector(".gameover");
+    gamestart = document.querySelector(".i");
     upbtn = document.getElementById("upkey");
     downbtn = document.getElementById("downkey");
     leftbtn = document.getElementById("leftkey");
@@ -50,24 +52,28 @@ window.onload = function (){
         if(velocityY != 1){
             velocityX = 0;
             velocityY = -1;
+            gamestart.style.display = "none";
         }
     });
     downbtn.addEventListener('click', ()=>{
         if(velocityY != -1){
             velocityX = 0;
             velocityY = 1;
+            gamestart.style.display = "none";
         }
     });
     leftbtn.addEventListener('click', ()=>{
         if(velocityX != 1){
             velocityX = -1;
             velocityY = 0;
+            gamestart.style.display = "none";
         }
     });
     rightbtn.addEventListener('click', ()=>{
         if(velocityX != -1){
             velocityX = 1;
             velocityY = 0;
+            gamestart.style.display = "none";
         }
     });
     setInterval(update, 100);
@@ -122,17 +128,21 @@ function changedir(e){
     if(e.key == "ArrowUp" && velocityY != 1){
         velocityX = 0;
         velocityY = -1;
+        gamestart.style.display = "none";
     }
     else if(e.key == "ArrowDown" && velocityY != -1){
         velocityX = 0;
         velocityY = 1;
+        gamestart.style.display = "none";
     }
     else if(e.key == "ArrowLeft" && velocityX != 1){
         velocityX = -1;
         velocityY = 0;
+        gamestart.style.display = "none";
     }
     else if(e.key == "ArrowRight" && velocityX != -1){
         velocityX = 1;
         velocityY = 0;
+        gamestart.style.display = "none";
     }
 }
