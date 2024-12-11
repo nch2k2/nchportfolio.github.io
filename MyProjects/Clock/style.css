@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 50vw;
+    height: 50vw;
+}
+.clock{
+    width: 50vw;
+    height: 50vw;
+    border: 5px solid black;
+    border-radius: 25vw;
+}
+.hour{
+    height: 21%;
+    width: 3%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.min{
+    height: 39%;
+    width: 2%;
+    position: absolute;
+    top: 12%;
+    left: 50.5%;
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sec{
+    height: 45%;
+    width: 1%;
+    position: absolute;
+    top: 6%;
+    left: 51%;
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
