@@ -1,0 +1,489 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg0{
+    width: 100%;
+    height: 100%;
+    perspective: 500px;
+}
+.cross{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.cross1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    clip-path: polygon(0% 50%, 25% 40%, 75% 60%, 100% 50%, 75% 40%, 25% 60%);
+}
+.cross2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    clip-path: polygon(0% 50%, 25% 40%, 75% 60%, 100% 50%, 75% 40%, 25% 60%);
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 960px;
+}
+.wall{
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+}
+.surf{
+    width: 1920px;
+    height: 1920px;
+    position: absolute;
+}
+#wallb{
+    background: linear-gradient( rgb(135, 135, 83), rgb(199, 196, 137));
+    transform: translateZ(-960px);
+}
+#walll{
+    background: linear-gradient(to bottom right, black, rgb(181, 181, 105));
+    transform: translateX(-960px) rotateY(90deg);
+}
+#wallr{
+    background: linear-gradient(to bottom left, black, rgb(181, 181, 105));
+    transform: translateX(960px) rotateY(-90deg);
+}
+#surft{
+    background: linear-gradient(to top, black, rgb(97, 97, 62));
+    transform: translateY(-960px) rotateX(90deg);
+}
+#surfb{
+    background: linear-gradient(to bottom, black, rgb(181, 181, 105));
+    transform: translateY(120px) rotateX(-90deg);
+}
+.targetsurf1{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    transform: translateZ(-950px);
+}
+.targetsurf2{
+    background-color: rgba(49, 53, 92, 0.432);
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    transform: translateZ(-700px);
+}
+.target{
+    width: 400px;
+    height: 400px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+.ring1{
+    background-color: red;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    clip-path: circle();
+}
+.ring2{
+    background-color: yellow;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    clip-path: circle();
+}
+.ring3{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    clip-path: circle();
+}
+.gametime{
+    display: none;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+.score{
+    display: none;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 20%;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+.gun{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform-origin: 100% 100%;
+}
+.barrel{
+    background-color: rgb(7, 7, 7);
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    clip-path: path("M 10, 30 A 10,10 0,0,1 20, 10 L 600, 200 L 600, 300 Z");
+}
+.grip{
+    background-color: rgb(73, 36, 10);
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    clip-path: path("M 110, 60 A 10,10 0,0,0 100, 70 L 100, 80 A 22,22 0,0,0 110, 100 L 400, 300 L 600, 300 L 600, 260 Z");
+}
+.hitani{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 41%;
+    left: 39%;
+}
+.spark1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: rotateZ(-90deg) translateY(180px) translateX(-40px);
+}
+.spark2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: rotateZ(60deg) translateY(-100px) translateX(150px);
+}
+.spark3{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: rotateZ(180deg) translateY(-50px) translateX(-150px);
+}
+.bullet{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip-path: path("M 20, 20 L 150, 65 A 10,10 0,0,1 145, 75 L 100, 55 Z");
+}
+@keyframes sparkani {
+    0% {clip-path: polygon(50% 50%, 52% 50%, 60% 60%);}
+    25% {clip-path: polygon(50% 50%, 75% 70%, 100% 100%);}
+    100% {clip-path: polygon(90% 90%, 100% 100%, 96% 98%);}
+}
+.spark{
+    background-color: white;
+    animation: sparkani 0.1s linear;
+}
+@keyframes bullet_ani {
+    0% {transform: translateX(0px) translateY(0px) scale(1);}
+    100% {transform: translateX(-90px) translateY(-35px) scale(0.4);}
+}
+.bulletmove{
+    background: linear-gradient( 225deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+.startgame{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.settingsmenu{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 25%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.moresettings{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 25%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.pausegame{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 25%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gameoverscreen{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 25%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.startbtn{
+    width: 200px;
+    height: 80px;
+    border: 4px solid black;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    cursor: default;
+}
+.resumebtn{
+    width: 200px;
+    height: 100px;
+    border: 4px solid black;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    cursor: default;
+}
+.custombtn{
+    width: 200px;
+    height: 80px;
+    border: 4px solid black;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.backbtn{
+    width: 150px;
+    height: 80px;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.okbtn{
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+    margin-top: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.advancedsettings{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.advok{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftarrow{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(30% 50%, 70% 90%, 50% 50%, 70% 10%);
+}
+.playbtn{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(40% 10%, 40% 90%, 70% 50%);
+}
+.scorenumber{
+    width: 400px;
+    height: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+.round{
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 40%;
+    background-color: red;
+    
+}
+.roundno{
+    width: 50%;
+    height: 60%;
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.rounddes{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: gray;
+    clip-path: polygon(0 60%, 50% 60%, 60% 0, 100% 0, 100% 100%, 0 100%);
+    top: 0;
+}
+.countdwn{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: none;
+    justify-content: center;
+}
+.options{
+    width: 60%;
+    height: 50%;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 20% 60% 20%;
+}
+.options2{
+    width: 25%;
+    height: 50%;
+    margin-top: 10px;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+}
+.senheading{
+    font-size: 40px;
+}
+.moreheading{
+    font-size: 40px;
+}
+input[type="range"]{
+    appearance: none;
+    width: 90%;
+    height: 15px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border: none;
+}
+.sensitivityvalue{
+    margin-left: 50px;
+    font-size: 30px;
+}
+.sensitivitytext{
+    margin-right: 50px;
+    font-size: 30px;
+}
+.soundvalue{
+    margin-left: 50px;
+    font-size: 30px;
+}
+.soundtext{
+    margin-right: 100px;
+    font-size: 30px;
+}
+.crosshairname{
+    font-size: 30px;
+}
+.targetname{
+    font-size: 30px;
+}
+#crosshaircolor{
+    width: 80px;
+    height: 50px;
+}
+.targetbox{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wheel1{
+    width: 120px;
+    height: 120px;
+    clip-path: circle(50px);
+    position: absolute;
+}
+#wheel2{
+    width: 100px;
+    height: 100px;
+    clip-path: circle(35px);
+    position: absolute;
+}
+#wheel3{
+    width: 120px;
+    height: 120px;
+    clip-path: circle(20px);
+    position: absolute;
+}
